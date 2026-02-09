@@ -1,15 +1,23 @@
 import numpy as np
 
-points = np.array([
-    [0, 0, 0],
-    [10, 0, 0],
-    [10, 10, 0],
-    [0, 10, 0],
-    [0, 0, 10],
-    [10, 0, 10],
-    [10, 10, 10],
-    [0, 10, 10],
-])
+import pandas as pd
+
+# فایل CSV رو بخون
+df = pd.read_csv("scan_points.csv")  # جای "file.csv" نام فایل خودت رو بذار
+
+# ستون‌ها رو به آرایه NumPy تبدیل کن
+points = df[['X', 'Y', 'Z']].to_numpy()
+# points = np.array([
+#     [0, 0, 0],
+#     [10, 0, 0],
+#     [10, 10, 0],
+#     [0, 10, 0],
+#     [0, 0, 10],
+#     [10, 0, 10],
+#     [10, 10, 10],
+#     [0, 10, 10],
+# ])
+
 
 
 from scipy.spatial import ConvexHull
