@@ -6,7 +6,8 @@ import trimesh
 # ============================
 STL_FILE = "cube.stl"     # path to STL file
 
-RADIUS = 200.0             # distance of sensors from center (mm)
+# RADIUS = 200.0             # distance of sensors from center (mm)
+RADIUS = 100.0             # distance of sensors from center (mm)
 DELTA_THETA = 1.0          # angular step (degrees)
 # Z_POSITIONS = [-20, 0, 20] # sensor Z sweep (mm)
 Z_POSITIONS = np.arange(-50, 51, 5)  # از -50 تا 50 mm، گام 5 mm
@@ -19,10 +20,10 @@ OUTPUT_FILE = "scan_points.csv"
 # Load STL and center it
 # ============================
 mesh = trimesh.load(STL_FILE)
-
+print(mesh.bounds)
 # Move mesh center to origin
 mesh.vertices -= mesh.centroid
-
+print(mesh.bounds)
 # ============================
 # Prepare ray intersector
 # ============================

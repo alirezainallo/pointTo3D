@@ -34,7 +34,7 @@ for i, face in enumerate(faces):
     for j in range(3):
         cube_mesh.vectors[i][j] = points[face[j]]
 
-cube_mesh.save("cube.stl")
-print("cube.stl created")
+cube_mesh.save("file.stl")
+print("file.stl created")
 
-# cube.stl
+# file.stl
